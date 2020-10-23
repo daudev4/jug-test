@@ -11,7 +11,6 @@ const IMAGE_PARAMETERS = {
 };
 
 const answer = document.querySelector('.answer');
-const answerForm = answer.querySelector('.answer__form form');
 
 const showMessage = (text, image) => {
   const onLoadMessage = document.createElement('div');
@@ -51,12 +50,16 @@ const onLoadError = (statusText) => {
 };
 
 const initAnswer = () => {
-  answerForm.addEventListener('submit', (evt) => {
-    evt.preventDefault();
-    const data = new FormData(evt.target);
+  if (answer) {
+    const answerForm = answer.querySelector('.answer__form form');
 
-    load(onLoadSuccess, onLoadError, UPLOAD_URL, data);
-  });
+    answerForm.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+      const data = new FormData(evt.target);
+
+      load(onLoadSuccess, onLoadError, UPLOAD_URL, data);
+    });
+  }
 };
 
 export {initAnswer};

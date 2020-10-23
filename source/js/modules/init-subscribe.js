@@ -5,8 +5,6 @@ const SUBSCRIBE_MESSAGE = 'Спасибо, что подписались на н
 
 const subscribe = document.querySelector('#subscribe');
 const subscribeContent = subscribe.querySelector('.subscribe__content');
-const subscribeForm = subscribeContent.querySelector('.subscribe__form form');
-
 
 const showMessage = (text) => {
   const onLoadMessage = document.createElement('p');
@@ -29,12 +27,15 @@ const onLoadError = (statusText) => {
 };
 
 const initSubscribe = () => {
-  subscribeForm.addEventListener('submit', (evt) => {
-    evt.preventDefault();
-    const data = new FormData(evt.target);
+  if (subscribe) {
+    const subscribeForm = subscribeContent.querySelector('.subscribe__form form');
+    subscribeForm.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+      const data = new FormData(evt.target);
 
-    load(onLoadSuccess, onLoadError, UPLOAD_URL, data);
-  });
+      load(onLoadSuccess, onLoadError, UPLOAD_URL, data);
+    });
+  }
 };
 
 export {initSubscribe};
