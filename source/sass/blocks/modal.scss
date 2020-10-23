@@ -10,15 +10,15 @@
   flex-direction: column;
   overflow-y: auto;
 
-  background-color: rgba($color-default-black, 0.6);
+  background-color: $color-main-light;
   transform: scale(1.2);
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
 
-  transition: opacity $modal-transition-settings,
-    transform $modal-transition-settings,
-    visibility $modal-transition-settings;
+  transition: opacity $transition-base,
+    transform $transition-base,
+    visibility $transition-base;
 
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -32,15 +32,11 @@
 
     display: flex;
     flex-shrink: 0;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     min-height: 100%;
-    padding: 60px 40px;
-
-    @include viewport--sm {
-      padding: 60px 16px;
-    }
   }
 
   &__overlay {
@@ -60,8 +56,6 @@
     width: 600px;
     padding: 40px;
 
-    background-color: $color-default-white;
-
     @include viewport--sm {
       width: 100%;
       padding: 20px;
@@ -69,9 +63,55 @@
   }
 
   &__close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
+    position: relative;
+    z-index: 10;
+
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    margin-top: 75px;
+
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+
+    transition: color $transition-base;
+
+    svg {
+      flex-shrink: 0;
+      margin-right: 18px;
+
+      fill: none;
+      stroke: currentColor;
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        color: rgba($color-main-dark, 0.32);
+      }
+    }
+
+    @include viewport--md {
+      align-self: center;
+      margin-top: 5px;
+
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    @include viewport--sm {
+      margin-top: 25px;
+
+      font-size: 14px;
+      line-height: 18px;
+
+      svg {
+        width: 12px;
+        height: 20px;
+        margin-right: 10px;
+      }
+    }
   }
 
   &--responsive {
@@ -94,6 +134,12 @@
     transform: none;
   }
 
+  &--no-overlay {
+    .modal__overlay {
+      pointer-events: none;
+    }
+  }
+
   &--preload {
     display: none;
   }
@@ -103,5 +149,63 @@
     visibility: visible;
     opacity: 1;
     pointer-events: auto;
+  }
+
+  &--banner {
+    .modal__wrapper {
+      padding-top: 87px;
+      padding-bottom: 107px;
+    }
+
+    .modal__content {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: stretch;
+      padding: 0;
+    }
+
+    .frame {
+      flex: 1 1 0;
+      margin-left: 20px;
+
+      &:nth-child(2n) {
+        margin-left: 0;
+      }
+    }
+
+    @include viewport--md {
+      .modal__wrapper {
+        justify-content: flex-start;
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+
+      .modal__content {
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+
+      .frame {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 22px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    @include viewport--sm {
+      .modal__wrapper {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .frame {
+        margin-bottom: 20px;
+      }
+    }
   }
 }

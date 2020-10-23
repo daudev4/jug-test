@@ -1,16 +1,18 @@
-<div class="modal modal--preload modal--@@name @@if (context.responsive) { modal--responsive } @@if (context.fitContent) { modal--fit-content } @@if (context.noScale) { modal--no-scale } @@if (context.mod) { modal--@@mod }">
-  <div class="modal__wrapper">
+<div class="modal modal--preload modal--@@name @@if (context.responsive) { modal--responsive } @@if (context.fitContent) { modal--fit-content } @@if (context.noScale) { modal--no-scale } @@if (context.noOverlay) { modal--no-overlay } @@if (context.mod) { modal--@@mod }">
+  <div class="modal__wrapper container">
     <div class="modal__overlay"></div>
     <div class="modal__content">
 
       @@include("source/html/components/modal-@@name.html")
 
-      <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап">
-        <svg width="15" height="15">
-          <use xlink:href="#icon-close"></use>
-        </svg>
-      </button>
-
     </div>
+    <a class="modal__close-btn" href="#">
+      <svg width="24" height="39">
+        <use xlink:href="img/sprite_auto.svg#icon-arrow-left-big"></use>
+      </svg>
+      <span>
+        Я кликнул просто посмотреть
+      </span>
+    </a>
   </div>
 </div>

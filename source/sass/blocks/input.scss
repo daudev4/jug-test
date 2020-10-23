@@ -1,0 +1,43 @@
+.input {
+  display: flex;
+
+  input {
+    width: 100%;
+    padding: 16px 28px;
+    padding-right: 10px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: $color-main-dark;
+
+    outline: none;
+    border: none;
+    border-radius: 11px;
+    background-color: $white-smoke;
+
+    &::placeholder {
+      color: rgba($color-main-dark, 0.32);
+
+      transition: color $transition-base;
+    }
+
+    &:hover,
+    &:focus {
+      &::placeholder {
+        color: $color-main-dark;
+      }
+    }
+  }
+
+  @include viewport--sm {
+    input {
+      padding: 13px 14px;
+      padding-bottom: 12px;
+
+      font-size: 11px;
+      line-height: 14px;
+      border-radius: 7px;
+    }
+  }
+}

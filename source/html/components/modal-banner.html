@@ -1,0 +1,76 @@
+<section class="frame frame--dark answer" id="ass">
+  <div class="frame__title">
+    <img src="img/emoji-facepalm@1x.png" width="60" height="60"
+    srcset="img/emoji-facepalm@1x.png 1x, img/emoji-facepalm@2x.png 2x"
+    alt="Эмоджи рука лицо" aria-hidden="true">
+    <h2>
+      Идите в жопу!
+    </h2>
+  </div>
+  <div class="frame__content answer__content">
+    <div class="answer__form">
+      <form action="#" method="post">
+        @@include("source/html/components/button.html", {
+          mod: "ghost-white",
+          type: "submit",
+          text: "Вы свои цены видели?",
+          valur: "overprice",
+          rounded: true,
+        })
+        @@include("source/html/components/button.html", {
+          mod: "ghost-white",
+          type: "submit",
+          text: "Доклады ни о чем",
+          valur: "lectures-suck",
+          rounded: true,
+        })
+        @@include("source/html/components/button.html", {
+          mod: "ghost-white",
+          type: "submit",
+          text: "У вас там всё хорошо?",
+          valur: "are-you-good",
+          rounded: true,
+        })
+        @@include("source/html/components/button.html", {
+          mod: "ghost-white",
+          type: "submit",
+          text: "Денег нет, но вы держитесь",
+          valur: "no-money",
+          rounded: true,
+        })
+      </form>
+    </div>
+  </div>
+</section>
+<section class="frame subscribe" id="subscribe">
+  <div class="frame__title">
+    <img src="img/emoji-raise-hand@1x.png" width="60" height="60"
+    srcset="img/emoji-raise-hand@1x.png 1x, img/emoji-raise-hand@2x.png 2x"
+    alt="Эмоджи рука вверх" aria-hidden="true">
+    <h2>
+      Я хочу знать, когда будет офлайн
+    </h2>
+  </div>
+  <div class="frame__content subscribe__content">
+    <div class="frame__form subscribe__form">
+      <form action="#" method="post">
+        <div class="subscribe__form-item">
+          @@include("source/html/components/input.html", {
+            id: "modal-email-subscribe",
+            name: "email-subscribe",
+            type: "email",
+            placeholder: "Укажите email",
+          })
+          @@include("source/html/components/button.html", {
+            mod: "ghost",
+            type: "submit",
+            text: "Подписаться",
+          })
+        </div>
+      </form>
+      <p class="subscribe__privacy">
+        Нажимая на кнопку вы, соглашаетесь на обработку <a href="#">персональных данных</a>
+      </p>
+    </div>
+  </div>
+</section>

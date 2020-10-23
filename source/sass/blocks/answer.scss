@@ -1,0 +1,48 @@
+.answer__message {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  text-align: center;
+
+  transition: visibility $transition-long, opacity $transition-long;
+
+  &-text {
+    margin: 0;
+    margin-top: 20px;
+  }
+}
+
+.answer__form {
+  margin-top: 70px;
+  padding: 0 10.7%;
+  padding-bottom: 30px;
+
+  .button {
+    width: 100%;
+  }
+
+  .button + .button {
+    margin-top: 20px;
+  }
+
+  @include viewport--md {
+    padding-bottom: 34px;
+  }
+
+  @include viewport--sm {
+    margin-top: 40px;
+    padding: 0 12px;
+    padding-bottom: 20px;
+
+    .button + .button {
+      margin-top: 10px;
+    }
+  }
+}

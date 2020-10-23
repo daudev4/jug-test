@@ -53,7 +53,6 @@
   </div>
 
   <div class="wrapper">
-    @@include("source/html/base/header.html")
 
     <main>
       <div class="container">
@@ -71,6 +70,177 @@
           <div>Компонент</div>
         </section>
 
+        <section>
+          <h2>Кнопка</h2>
+
+          <p>.button \ .button--ghost</p>
+          <div>
+            @@include("source/html/components/button.html", {
+              mod: "ghost",
+              href: "#",
+              text: "Купить билет",
+            })
+          </div>
+          <p>.button \ .button--big \ .button--yellow</p>
+          <p style="color: red;">С эмоджи</p>
+          <div>
+            @@include("source/html/components/button.html", {
+              mod: "yellow",
+              size: "big",
+              href: "#",
+              text: "Купить билет",
+              img: {
+                name: "emoji-raise-hand",
+                format: "png",
+                width: "52",
+                height: "52",
+                alt: "Эмоджи рука вверх"
+              }
+            })
+          </div>
+          <p>.button \ .button--big \ .button--black</p>
+          <p style="color: red;">С эмоджи</p>
+          <div>
+            @@include("source/html/components/button.html", {
+              mod: "black",
+              size: "big",
+              href: "#",
+              text: "Послать в жопу",
+              img: {
+                name: "emoji-facepalm",
+                format: "png",
+                width: "44",
+                height: "44",
+                alt: "Эмоджи рука лицо"
+              }
+            })
+          </div>
+
+          <p>.button \ .button--rounded \ .button--ghost-white</p>
+          <div style="background-color: black; width: fit-content; padding: 20px;">
+            @@include("source/html/components/button.html", {
+              mod: "ghost-white",
+              type: "submit",
+              text: "Вы свои цены видели?",
+              valur: "overprice",
+              rounded: true,
+            })
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Инпут</h2>
+
+          <p>.input \ type="email"</p>
+          <div style="max-width: 400px;">
+            @@include("source/html/components/input.html", {
+              id: "modal-email-subscribe",
+              name: "email-subscribe",
+              type: "email",
+              placeholder: "Укажите email",
+            })
+          </div>
+        </section>
+
+        <section>
+          <h2>Зебра</h2>
+
+          <p>.zebra</p>
+          <div>
+            <div class="zebra" style="width: 400px; height: 400px"></div>
+          </div>
+        </section>
+
+
+        <section>
+          <h2>Фрейм</h2>
+
+          <p>.frame</p>
+          <div>
+            <section class="frame subscribe" id="subscribe">
+              <div class="frame__title">
+                <img src="img/emoji-raise-hand@1x.png" width="60" height="60"
+                srcset="img/emoji-raise-hand@1x.png 1x, img/emoji-raise-hand@2x.png 2x"
+                alt="Эмоджи рука вверх" aria-hidden="true">
+                <h2>
+                  Я хочу знать, когда будет офлайн
+                </h2>
+              </div>
+              <div class="frame__content subscribe__content">
+                <div class="frame__form subscribe__form">
+                  <form action="#" method="post">
+                    <div class="subscribe__form-item">
+                      @@include("source/html/components/input.html", {
+                        id: "modal-email-subscribe",
+                        name: "email-subscribe",
+                        type: "email",
+                        placeholder: "Укажите email",
+                      })
+                      @@include("source/html/components/button.html", {
+                        mod: "ghost",
+                        type: "submit",
+                        text: "Подписаться",
+                      })
+                    </div>
+                  </form>
+                  <p class="subscribe__privacy">
+                    Нажимая на кнопку вы, соглашаетесь на обработку <a href="#">персональных данных</a>
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <p>.frame \ .frame--dark</p>
+          <div>
+            <section class="frame frame--dark answer" id="ass">
+              <div class="frame__title">
+                <img src="img/emoji-facepalm@1x.png" width="60" height="60"
+                srcset="img/emoji-facepalm@1x.png 1x, img/emoji-facepalm@2x.png 2x"
+                alt="Эмоджи рука лицо" aria-hidden="true">
+                <h2>
+                  Идите в жопу!
+                </h2>
+              </div>
+              <div class="frame__content answer__content">
+                <div class="answer__form">
+                  <form action="#" method="post">
+                    @@include("source/html/components/button.html", {
+                      mod: "ghost-white",
+                      type: "submit",
+                      text: "Вы свои цены видели?",
+                      valur: "overprice",
+                      rounded: true,
+                    })
+                    @@include("source/html/components/button.html", {
+                      mod: "ghost-white",
+                      type: "submit",
+                      text: "Доклады ни о чем",
+                      valur: "lectures-suck",
+                      rounded: true,
+                    })
+                    @@include("source/html/components/button.html", {
+                      mod: "ghost-white",
+                      type: "submit",
+                      text: "У вас там всё хорошо?",
+                      valur: "are-you-good",
+                      rounded: true,
+                    })
+                    @@include("source/html/components/button.html", {
+                      mod: "ghost-white",
+                      type: "submit",
+                      text: "Денег нет, но вы держитесь",
+                      valur: "no-money",
+                      rounded: true,
+                    })
+                  </form>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+
         <!-- Всегда оставляйте коммент ниже, чтобы удобно было копипастить -->
         <!-- <section>
           <h2></h2>
@@ -79,8 +249,6 @@
         </section> -->
       </div>
     </main>
-
-    @@include("source/html/base/footer.html")
   </div>
 
   <script src="js/vendor.min.js"></script>

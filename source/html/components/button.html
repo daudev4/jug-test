@@ -1,0 +1,24 @@
+@@if (context.href) {
+  <a class="button @@if (context.mod) {button--@@mod} @@if (context.size) {button--@@size} @@if (context.rounded) {button--rounded}" href="@@href" @@if (context.modal) {data-modal="@@modal"}>
+    @@if (context.img) {
+      <img src="img/@@img.name@1x.@@img.format" width="@@img.width" height="@@img.height"
+         srcset="img/@@img.name@1x.@@img.format 1x, img/@@img.name@2x.@@img.format 2x"
+         alt="@@img.alt" aria-hidden="true">
+    }
+    <span>
+      @@text
+    </span>
+  </a>
+}
+@@if (!context.href) {
+  <button class="button @@if (context.mod) {button--@@mod} @@if (context.size) {button--@@size} @@if (context.rounded) {button--rounded}" @@if (context.type) {type="@@type"} @@if (context.modal) {data-modal="@@modal"} @@if (context.value) {type="@@value"}>
+    @@if (context.img) {
+      <img src="img/@@img.name@1x.@@img.format" width="@@img.width" height="@@img.height"
+         srcset="img/@@img.name@1x.@@img.format 1x, img/@@img.name@2x.@@img.format 2x"
+         alt="@@img.alt" aria-hidden="true">
+    }
+    <span>
+      @@text
+    </span>
+  </button>
+}

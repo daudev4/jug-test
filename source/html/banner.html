@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+  @@include("source/html/base/head.html")
+  <title>Баннер</title>
+
+</head>
+<body>
+
+  <div style="display: none;">
+    @@include("build/img/sprite_auto.svg")
+  </div>
+
+  <div class="wrapper">
+    <main>
+      <h1 class="visually-hidden">
+        JUG Ru Group — хардкорные встречи и конференции для IT-специалистов
+      </h1>
+      <section class="banner">
+        <div class="banner__inner container">
+          <div class="banner__content">
+            <a class="banner__logo logo" href="#">
+              <img src="img/logo.svg" width="126" height="41" alt="Логотип JUG group">
+            </a>
+            <div class="banner__text">
+              <h2 class="banner__title">
+                Конференции, которые нужны
+              </h2>
+              <p class="banner__paragraph">
+                Мы, JUG Ru Group, делаем крупнейшие конференции для программистов и сочувствующих.
+              </p>
+              <p class="banner__paragraph">
+                С нас — крутая программа, топовые спикеры, технические доклады без воды.
+              </p>
+              <p class="banner__paragraph">
+                С вас — готовность смотреть и общаться.
+              </p>
+            </div>
+            <div class="banner__buttons">
+              @@include("source/html/components/button.html", {
+                mod: "yellow",
+                size: "big",
+                href: "#subscribe",
+                text: "Купить билет",
+                modal: "banner",
+                img: {
+                  name: "emoji-raise-hand",
+                  format: "png",
+                  width: "52",
+                  height: "52",
+                  alt: "Эмоджи рука вверх",
+                }
+              })
+              @@include("source/html/components/button.html", {
+                mod: "black",
+                size: "big",
+                href: "#ass",
+                text: "Послать в жопу",
+                modal: "banner",
+                img: {
+                  name: "emoji-facepalm",
+                  format: "png",
+                  width: "44",
+                  height: "44",
+                  alt: "Эмоджи рука лицо",
+                }
+              })
+            </div>
+          </div>
+          <div class="banner__decoration">
+            <div class="banner__zebra zebra"></div>
+            <div class="banner__image">
+              <img src="img/banner-image--desktop@1x.png" width="714" height="611"
+              srcset="img/banner-image--desktop@1x.png 1x, img/banner-image--desktop@2x.png 2x"
+              alt="Лолотипы проводимых конференций">
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    @@include("source/html/base/modal.html", {
+      name: "banner",
+      noOverlay: true,
+      responsive: true,
+    })
+  </div>
+
+  <script src="js/vendor.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+</html>
